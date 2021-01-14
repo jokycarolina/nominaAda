@@ -1,33 +1,35 @@
 package modelos;
 
+import modelos.Enums.TipoDeNivel;
+
 public class Salario extends Empleado {
-    private Cargo cargo;
+    private TipoDeNivel nivel;
     private int horasExtras;
     private int salarioTotal;
     private int numeroDeHorasExtras;
     private int sueldoBase;
 
-    public Salario(String nombre, int dni, Cargo cargo, int horasExtras, int salarioTotal, int numeroDeHorasExtras, int sueldoBase) {
-        super(nombre, dni, cargo);
+    public Salario(String nombre, int dni, Cargo cargo, TipoDeNivel nivel, int horasExtras, int salarioTotal, int numeroDeHorasExtras, int sueldoBase) {
+        super(nombre, dni, nivel);
+        this.nivel = nivel;
         this.horasExtras = horasExtras;
         this.salarioTotal = salarioTotal;
         this.numeroDeHorasExtras = numeroDeHorasExtras;
         this.sueldoBase = sueldoBase;
     }
 
-    @Override
-    public Cargo getCargo() {
-        return cargo;
+    public TipoDeNivel getCargo() {
+        return nivel;
     }
 
-    public void setCargo(Cargo cargo) {
-        this.cargo = cargo;
+    public void setCargo(TipoDeNivel nivel) {
+        this.nivel = nivel;
     }
 
     public int getSueldoBase() {
-        if (cargo.equals("junior")) {
+        if (nivel.equals("JUNIOR")) {
             sueldoBase = 50000;
-        } else if (cargo.equals("senior")) {
+        } else if (nivel.equals("SENIOR")) {
             sueldoBase = 100000;
         }
         return sueldoBase;
@@ -49,9 +51,9 @@ public class Salario extends Empleado {
 
 
     public int getHorasExtras() {
-        if (cargo.getNivel().equals("junior")) {
+        if (getCargo().equals ("JUNIOR")) {
             horasExtras = 300 * numeroDeHorasExtras;
-        } else if (cargo.getNivel().equals("senior")) {
+        } else if (getCargo().equals("SENIOR")) {
             horasExtras = 500 * numeroDeHorasExtras;
         }
 
@@ -65,7 +67,7 @@ public class Salario extends Empleado {
     @Override
     public String toString() {
         return "Salario{" +
-                "cargo=" + cargo +
+                "cargo=" + getCargo().name() +
                 ", horasExtras=" + horasExtras +
                 ", salarioTotal=" + salarioTotal +
                 ", numeroDeHorasExtras=" + numeroDeHorasExtras +

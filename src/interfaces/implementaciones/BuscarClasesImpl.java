@@ -3,22 +3,23 @@ package interfaces.implementaciones;
 import modelos.Cargo;
 import modelos.Empleado;
 import interfaces.IBuscarClases;
+import modelos.Enums.TipoDeNivel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BuscarClasesImpl implements IBuscarClases {
     @Override
-    public List<Empleado> buscarEmpleadosPorCargo(List<Empleado> empleados, Cargo cargo) {
+    public List<Empleado> buscarEmpleadosPorCargo(List<Empleado> empleados, TipoDeNivel nivel) {
         List<Empleado> empleados_Cargo = new ArrayList<>();
 
         for (Empleado empleado : empleados) {
-            if (empleado.getCargo() == cargo) {
+            if (empleado.getNivel() == nivel) {
                 empleados_Cargo.add(empleado);
             }
         }
         System.out.println(
-                "Los empleados con el " + cargo +
+                "Los empleados con el " + nivel +
                         " Son: " + "\n" + empleados_Cargo);
         return empleados_Cargo;
     }

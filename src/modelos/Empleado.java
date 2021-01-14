@@ -1,14 +1,17 @@
 package modelos;
 
+import modelos.Enums.TipoDeNivel;
+
 public class Empleado {
     private String nombre;
     private int dni;
-    private Cargo cargo;
+    private TipoDeNivel nivel;
 
-    public Empleado(String nombre, int dni, Cargo cargo) {
+    public Empleado(String nombre, int dni, TipoDeNivel nivel) {
         this.nombre = nombre;
         this.dni = dni;
-        this.cargo = cargo;
+
+        this.nivel = nivel;
     }
 
     public String getNombre() {
@@ -27,12 +30,12 @@ public class Empleado {
         this.dni = dni;
     }
 
-    public Cargo getCargo() {
-        return cargo;
+    public TipoDeNivel getNivel() {
+        return nivel;
     }
 
-    public void setCargo(Cargo cargo) {
-        this.cargo = cargo;
+    public void setNivel(TipoDeNivel nivel) {
+        this.nivel = nivel;
     }
 
     @Override
@@ -40,7 +43,7 @@ public class Empleado {
         return "Empleado{" +
                 "nombre='" + nombre + '\'' +
                 ", dni=" + dni +
-                ", cargo=" + cargo +
+                ", nivel=" + nivel.name() +
                 '}';
     }
 }
