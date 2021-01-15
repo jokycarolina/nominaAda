@@ -11,4 +11,6 @@ public interface IBuscarClases {
     List<Empleado> buscarEmpleadosPorCargo(List<Empleado> empleados, TipoDeNivel nivel);
 
     List<Empleado> buscarEmpleadosPorNombre(List<Empleado> empleados, String nombre);
+
+    List<Empleado> buscarEmpleadoPorNivel(List<Empleado> empleados, TipoDeNivel tipoDeNivel);
 }
