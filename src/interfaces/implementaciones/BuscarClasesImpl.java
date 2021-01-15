@@ -40,4 +40,9 @@ public class BuscarClasesImpl implements IBuscarClases {
 
         return empleados_Nombre;
     }
+
+    @Override
+    public List<Empleado> buscarEmpleadoPorNivel(List<Empleado> empleados, TipoDeNivel tipoDeNivel) {
+        return null;
+    }
 }
