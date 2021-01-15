@@ -1,25 +1,29 @@
 package modelos;
 
-public class Cargo  {
- private String nivel;
+import modelos.Enums.TipoDeNivel;
 
-    public Cargo(String nivel) {
+public class Cargo {
+    private TipoDeNivel nivel;
+
+    public Cargo(TipoDeNivel nivel) {
         this.nivel = nivel;
     }
 
-    public String getNivel() {
+    public TipoDeNivel getNivel() {
         return nivel;
     }
 
-    public void setNivel(String nivel) {
+    public void setNivel(TipoDeNivel nivel) {
         this.nivel = nivel;
     }
 
     @Override
     public String toString() {
         return "Cargo{" +
-                "nivel='" + nivel + '\'' +
+                "nivel=" + nivel.name() +
                 '}';
     }
 }
+
+
 
