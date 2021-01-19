@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NominaAda.iml" filepath="$PROJECT_DIR$/NominaAda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nominaAda.iml" filepath="$PROJECT_DIR$/nominaAda.iml" />
     </modules>
   </component>
 </project>

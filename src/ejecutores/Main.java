@@ -26,5 +26,8 @@ public class Main {
         IBuscarClases buscarClasesPorNombre = new BuscarClasesImpl();
         buscarClases.buscarEmpleadosPorNombre(empleadoList, "andrea");
 
+        IBuscarClases buscarClasesPorDni = new BuscarClasesImpl();
+        buscarClases.buscarEmpleadosPorDni(empleadoList, 222);
+
     }
 }
