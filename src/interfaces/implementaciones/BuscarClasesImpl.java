@@ -1,6 +1,5 @@
 package interfaces.implementaciones;
 
-import modelos.Cargo;
 import modelos.Empleado;
 import interfaces.IBuscarClases;
 import modelos.Enums.TipoDeNivel;
@@ -39,5 +38,19 @@ public class BuscarClasesImpl implements IBuscarClases {
 
 
         return empleados_Nombre;
+    }
+
+    @Override
+    public void buscarEmpleadosPorDni(List<Empleado> empleados, int dni) {
+        List<Empleado> empleados_Dni = new ArrayList<>();
+
+        for (Empleado empleado : empleados) {
+            if (empleado.getDni() == dni) {
+                empleados_Dni.add(empleado);
+            }
+        }
+        System.out.println(
+                "El empleado con el N° Dni " + dni +
+                        " es: " + "\n" + empleados_Dni);
     }
 }
